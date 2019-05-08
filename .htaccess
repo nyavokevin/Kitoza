@@ -1,0 +1,47 @@
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Home$  index.php/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Category-([^/])$ index.php?c=CategorieCTRL&m=loadCategorie&Id_Categorie=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Single-([^/])$ index.php?c=ImageCTRL&m=loadSingleImage&Id_img=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Similar-([^/])$ index.php?c=ImageCTRL&m=loadSimilar&titre=$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Connect-Admin$ index.php?c=ImageCTRL&m=loadAdmin [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Admin-Categories$ index.php?c=AdminController&m=getCateg [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Admin-Resolution$ index.php?c=AdminController&m=getResolution [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Admin-Wallpaper-Insert$ index.php?c=AdminController&m=loadInsertW [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Admin-Categorie-Insert$ index.php?c=AdminController&m=loadInsertC [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^Admin-Resolution-Insert$ index.php?c=AdminController&m=loadInsertR [L]
+
+
+
+
+
